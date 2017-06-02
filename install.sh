@@ -8,7 +8,7 @@ if [ $UID != 0 ]; then
     exit 1
 fi
 
-VERSION="spi"
+VERSION="lgw"
 if [[ $1 != "" ]]; then VERSION=$1; fi
 
 echo "The Things Network Gateway installer"
@@ -175,6 +175,7 @@ echo "Installation completed."
 
 # Start packet forwarder as a service
 cp ./start.sh $INSTALL_DIR/bin/
+cp ./reset_lgw.sh $INSTALL_DIR/bin/
 cp ./ttn-gateway.service /lib/systemd/system/
 systemctl enable ttn-gateway.service
 
