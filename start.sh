@@ -1,9 +1,9 @@
 #! /bin/bash
 
 # Reset the GW
-./reset_lgw.sh stop
+sudo ./reset_lgw.sh stop
 sleep 0.1
-./reset_lgw.sh start
+sudo ./reset_lgw.sh start
 
 # Test the connection, wait if needed.
 while [[ $(ping -c1 google.com 2>&1 | grep " 0% packet loss") == "" ]]; do
